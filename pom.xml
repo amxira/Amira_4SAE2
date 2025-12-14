@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>tn.esprit</groupId>
-    <artifactId>student-management</artifactId>
+    <artifactId>Amira_4SAE2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>student-management</name>
-    <description>student-management</description>
+    <name>Amira_4SAE2</name>
+    <description>Amira_4SAE2</description>
     <url/>
     <licenses>
         <license/>

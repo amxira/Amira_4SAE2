@@ -6,11 +6,11 @@ pipeline {
     }
     
     environment {
-        IMAGE_NAME = 'fekikarim/student-management'
+        IMAGE_NAME = 'amxira/Amira_4SAE2'
         // SonarQube configuration
-        SONARQUBE_SERVER = 'SonarQube'
-        SONAR_PROJECT_KEY = 'fekikarim_student-management_9e2a077b-3049-4a9a-9c0f-cdd057d5f477'
-        SONAR_PROJECT_NAME = 'student-management'
+        SONARQUBE_SERVER = 'SQ1'
+        SONAR_PROJECT_KEY = 'amxira_Amira_4SAE2_460a7286-3d11-4296-ac4b-c67c1c522976'
+        SONAR_PROJECT_NAME = 'Amira_4SAE2'
         SONAR_HOST_URL = 'http://192.168.33.10:9000'
     }
     
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 deleteDir()
                 git branch: 'main', 
-                    url: 'https://github.com/fekikarim/student-management.git'
+                    url: 'https://github.com/amxira/Amira_4SAE2.git'
                 sh 'chmod +x mvnw'
             }
         }
