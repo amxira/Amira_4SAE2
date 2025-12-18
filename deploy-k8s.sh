@@ -35,11 +35,16 @@ function check_kubectl() {
 }
 
 function check_k8s_connection() {
-    if ! kubectl cluster-info &> /dev/null; then
+    # Try alternative methods to check cluster connection
+    if kubectl get nodes &> /dev/null; then
+        print_info "Connexion au cluster Kubernetes OK"
+    elif kubectl version --client &> /dev/null && kubectl config current-context &> /dev/null; then
+        print_info "Connexion au cluster Kubernetes OK (configuration détectée)"
+    else
         print_error "Impossible de se connecter au cluster Kubernetes"
+        print_error "Veuillez vérifier que minikube est démarré: 'minikube start'"
         exit 1
     fi
-    print_info "Connexion au cluster Kubernetes OK"
 }
 
 function deploy_mysql() {
